@@ -10,7 +10,7 @@ def main(argv):
     alarm_time = ""
     ip_address = ""
     log_file_path = "C:\Program Files\LogRhythm\SmartResponse Plugins\SRP-MinFraud"
-    log_file = llog_file_path + "\minfraud.log"
+    log_file = log_file_path + "\minfraud.log"
 
     try:
         opts, args = getopt.getopt(argv,"hk:c:a:t:i:p:",["license_key=","client_id=","alarm_name=","alarm_time=","ip_address=","log_file_path="])
