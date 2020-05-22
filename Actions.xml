@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="MinFraud GeoIP and Insights" IsLogRhythmPlugin="false" Guid="e81b907f-9377-4102-aeab-79c8120fef3c" Version="1">
+
+  <remv1:Action Name="Add IP to Group" Command="python.exe">
+    <remv1:ConstantParameter Name="Script" Switch=" SRP_MinFraud.py" Order="1" />
+    <remv1:StringParameter Name="Alarm Time" Switch="-t " Order="2">
+      <remv1:DefaultInput>
+        <remv1:AlarmDate/>
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+      <remv1:StringParameter Name="Alarm Name" Switch="-a" Order="3">
+        <remv1:DefaultInput>
+          <remv1:AlarmRuleName />
+        </remv1:DefaultInput>
+      </remv1:StringParameter>
+    <remv1:StringParameter Name="IP Address" Switch="-i" Order="4">
+      <remv1:DefaultInput>
+        <remv1:SIP />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+  </remv1:Action>
+ </remv1:Remediation-Plugin>
