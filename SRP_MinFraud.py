@@ -44,8 +44,8 @@ def main(argv):
         else:
             print ("Successfully created Output Directory %s" % log_file_path)
 
-    icl = Client(clientid, licensekey)
-    gcl = geoip2.webservice.Client(clientid, licensekey)
+    icl = Client(client_id, license_key)
+    gcl = geoip2.webservice.Client(client_id, license_key)
     geoip = gcl.insights(ip_address)
     request = {
         'device': {
@@ -66,10 +66,10 @@ def main(argv):
         ip_anonymity = "is_public_proxy"
     elif geoip.traits.is_tor_exit_node:
         ip_anonymity = "is_tor_exit_node"
-    result = alarm_time + "|" + alarm_name + "|" + ip_address + "|" + insights.risk_score + "|" + ip_anonymity
+    result = alarm_time + "|" + alarm_name + "|" + ip_address + "|" + insights.risk_score + "|" + ip_anonymity + "\n"
     print(result)
     try:
-        of = open(log_file,a)
+        of = open(log_file,"a")
         of.write(result)
         of.close
     except OSError:
