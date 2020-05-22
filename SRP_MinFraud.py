@@ -4,8 +4,8 @@ import geoip2.webservice
 import sys, getopt
 
 def main(argv):
-    license_key = "KImIykkObxv9Wtnj"
-    client_id = 314920
+    license_key = ""
+    client_id = 0
     alarm_name = "SRP Test"
     alarm_time = ""
     ip_address = ""
@@ -19,7 +19,7 @@ def main(argv):
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print('SRP_MinFraud.py -k <license_key> -c <client_id> -a <alarm_name> -t <alarm_time> -p <log_file_path>')
+            print('SRP_MinFraud.py -k <license_key> -c <client_id> -a <alarm_name> -t <alarm_time> -i <ip_address> -p <log_file_path>')
             sys.exit()
         elif opt in ("-k", "--license_key"):
             license_key = arg
